@@ -786,3 +786,31 @@ print(c1())  --> 2
 # 面向对象编程
 
 [oop.lua](oop.md)
+
+# 垃圾回收
+
+> 弱引用
+```lua
+local results = {}
+setmetatable(results, {__mode = "v"})  -- make values weak
+function createRGB (r, g, b)
+    local key = string.format("%d-%d-%d", r, g, b)
+    local color = results[key]
+    if color == nil then
+        color = {red = r, green = g, blue = b}
+        results[key] = color
+    end
+    return color
+end
+```
+
+> 析构函数
+
+```lua
+o = {x = "hi"}
+mt = {}
+setmetatable(o, mt)
+mt.__gc = function (o) print(o.x) end
+o = nil
+collectgarbage()   --> (prints nothing)
+```
