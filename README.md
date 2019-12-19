@@ -781,8 +781,8 @@ print(c1())  --> 2
 
 # 元表
 
-[meta.lua](samples/meta.lua)
+[meta.lua](meta.md)
 
 # 面向对象编程
 
-[oop.lua](samples/oop.lua)
+[oop.lua](oop.md)
