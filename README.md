@@ -779,6 +779,10 @@ print(c1())  --> 1
 print(c1())  --> 2
 ```
 
-# 元表`metatable`
+# 元表
+
+[meta.lua](samples/meta.lua)
 
 # 面向对象编程
+
+[oop.lua](samples/oop.lua)
