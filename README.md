@@ -118,20 +118,46 @@ print(line)
 
 > 64位整数
 
+```lua
+string.format('%016X', math.maxinteger) -- 7FFFFFFFFFFFFFFF
+string.format('%016X', math.mininteger) -- 8000000000000000
+
+math.maxinteger + 1 == math.mininteger      --> true
+math.mininteger - 1 == math.maxinteger      --> true
+-math.mininteger == math.mininteger         --> true
+math.mininteger // -1 == math.mininteger    --> true
+```
 > 64位双精度浮点数
+```lua
+b = string.pack('d', math.pi)
+#b -- 8
+```
 
 > 支持科学计数法
 
+```lua
+string.format('%.10f', 1.0e-10) -- 0.0000000001
+string.format('%.10f', 1.0E-10) -- 0.0000000001
+string.format('%.10f', 1.0E+10) -- 10000000000.0000000000
+```
+
 > 支持16进制表达浮点数
-- 0xF.8 = 0xF + 0x8/16 = 15.5
-- 0x3p2 = 0x3 * 2^2 = 12
+
+```lua
+0xF.8 -- = 0xF + 0x8/16 = 15.5
+0x3p2 -- = 0x3 * 2^2 = 12
+```
 > 整除运算符`//`
 
-10//3 = floor(10/3) = 3
+```lua
+10//3 -- = floor(10/3) = 3
+```
 
 > 幂运算符`^`
 
-4^3 = 4\*4\*4 = 64
+```lua
+4^3 -- = 4\*4\*4 = 64
+```
     
 > 模运算符`%`
 
