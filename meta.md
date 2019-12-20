@@ -71,6 +71,10 @@ t = {
     end
 }
 
+function t:hide()
+    print('hide in grass', self)
+end
+
 t.run(t, 1.0)
 t:run(2.0)
 
@@ -102,6 +106,7 @@ end
 s007:reload()
 s007:run(100)
 s007:laugh(10)
+s007:hide()
 
 ```
 
