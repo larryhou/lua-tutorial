@@ -11,7 +11,7 @@ mt = {__index = {x = 100}}
 setmetatable(t, mt)
 print(t.x)
 
-goto e
+-- goto e
 
 -- class
 Object = {}
@@ -65,11 +65,15 @@ t = {
         print('run with speed', speed)
     end,
     jump = function(...)
-        args = table.pack(...)
-        self = args[1]
-        height = args[2]
+        self, height = ...
         self.height = height
         print('jump to height', height)
+    end,
+    laugh = function(...)
+        args = table.pack(...)
+        self = args[1]
+        duration = args[2]
+        print(string.format('laugh for %d minutes', duration))
     end
 }
 
@@ -103,6 +107,7 @@ for i = 1, 5 do
 end
 s007:reload()
 s007:run(100)
+s007:laugh(10)
 
 ::e::
 
