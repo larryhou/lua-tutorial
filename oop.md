@@ -22,8 +22,8 @@ end
 function Shape:tostring() return self end
 
 function Shape:translate(x, y) 
-    self.x += x or 0
-    self.y += y or 0
+    self.x = self.x + (x or 0)
+    self.y = self.y + (y or 0)
 end
 
 s = Shape:new()
